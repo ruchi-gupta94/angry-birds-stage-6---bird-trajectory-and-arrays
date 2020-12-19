@@ -1,2 +1,2 @@
-# angry-birds-stage-6---bird-trajectory-and-arrays
-angry birds stage 6 - bird trajectory and arrays
+# AngryBirdsStage3
+Stage 3 Angry Birds: Introducing Constraint
