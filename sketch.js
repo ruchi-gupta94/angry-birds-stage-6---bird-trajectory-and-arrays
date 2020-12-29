@@ -1,12 +1,13 @@
 //Examples on the different types of data in javascript
 
 //String
-var string = "This is a string";
-console.log(string);
+var name = "first";
+name = "last";
+console.log(name);
 
 //number
-var num = 100;
-console.log(num);
+var age = 14;
+console.log(age);
 
 //Boolean
 var bool = true;
@@ -21,6 +22,10 @@ console.log(object);
 object = null;
 console.log(object);
 
+//a data structure to hold multiple values is called an "array"
+//An array is created inside square brackets and can store a list of same 
+//or different types of data separated by a comma.
+
 //Examples on array
 
 //an array holding same data type
@@ -28,11 +33,13 @@ var arr1 = [1,2,3,4,5];
 console.log(arr1);
 
 //an array holding different data types
-var arr2 = ["name",12,true];
+var arr2 = ["Name", 6, "maths", true];
 console.log(arr2);
 
-//am array storinga list of arrays
-var arr3 = [[1,2], [2,3], [3,4]];
+//an array storinga list of arrays
+var arr3 = [[1,2], [3,4], [5,6]];
+//index       0       1     2
+//sub-index   0,1   0,1    0,1
 console.log(arr3);
 
 //access the first element of the array
@@ -43,14 +50,17 @@ console.log(arr3[0][0]);
 
 //access the second element of the first element of the array
 console.log(arr3[0][1]);
+console.log(arr3[1][1]); 
+console.log(arr3[2][0]); 
 
 //push into array
-arr3.push("my name");
+arr3.push("Name");
 console.log(arr3);
 
 //pop from array
 arr3.pop();
 console.log(arr3);
+console.log(arr3.length);
 
 const Engine = Matter.Engine;
 const World= Matter.World;
@@ -58,10 +68,11 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var box1, pig1,pig3;
+var box1, pig1, pig3;
 var backgroundImg,platform;
 var bird, slingshot;
-var gameState = "onSling";
+// "onSling" "launched"
+var gameState = "onSling"; 
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -123,10 +134,12 @@ function draw(){
 }
 
 function mouseDragged(){
-    if(gameState !== "launched"){
+    //if(gameState !== "launched"){
+    if(gameState === "onSling"){ 
         Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
     }
-}
+    }
+
 
 
 function mouseReleased(){
@@ -136,6 +149,6 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode === 32){
-        //slingshot.attach(bird.body);
+ //       slingshot.attach(bird.body);
     }
 }
